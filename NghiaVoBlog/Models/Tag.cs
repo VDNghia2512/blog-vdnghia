@@ -9,7 +9,7 @@ namespace NghiaVoBlog.Models
     {
          public String Name { get; set; }
 
-        public ICollection<Article> Articles { get; set; }
+        public ICollection<ArticleTag> ArticleTags { get; set; }
     }
 
 }

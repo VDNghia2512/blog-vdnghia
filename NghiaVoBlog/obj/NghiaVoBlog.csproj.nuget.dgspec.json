@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\blog-vdnghia\\NghiaVoBlog\\NghiaVoBlog.csproj": {}
+    "C:\\Users\\LHUser\\Desktop\\Blog\\blog-vdnghia\\NghiaVoBlog\\NghiaVoBlog.csproj": {}
   },
   "projects": {
-    "D:\\blog-vdnghia\\NghiaVoBlog\\NghiaVoBlog.csproj": {
+    "C:\\Users\\LHUser\\Desktop\\Blog\\blog-vdnghia\\NghiaVoBlog\\NghiaVoBlog.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\blog-vdnghia\\NghiaVoBlog\\NghiaVoBlog.csproj",
+        "projectUniqueName": "C:\\Users\\LHUser\\Desktop\\Blog\\blog-vdnghia\\NghiaVoBlog\\NghiaVoBlog.csproj",
         "projectName": "NghiaVoBlog",
-        "projectPath": "D:\\blog-vdnghia\\NghiaVoBlog\\NghiaVoBlog.csproj",
+        "projectPath": "C:\\Users\\LHUser\\Desktop\\Blog\\blog-vdnghia\\NghiaVoBlog\\NghiaVoBlog.csproj",
         "packagesPath": "C:\\Users\\LHUser\\.nuget\\packages\\",
-        "outputPath": "D:\\blog-vdnghia\\NghiaVoBlog\\obj\\",
+        "outputPath": "C:\\Users\\LHUser\\Desktop\\Blog\\blog-vdnghia\\NghiaVoBlog\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\LHUser\\AppData\\Roaming\\NuGet\\NuGet.Config"

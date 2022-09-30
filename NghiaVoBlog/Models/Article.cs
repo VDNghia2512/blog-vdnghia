@@ -18,11 +18,11 @@ namespace NghiaVoBlog.Models
         public Guid CategoryID { get; set; }
         public Category Category { get; set; }
 
-        public ICollection<Tag> Tags { get; set; }
+        public ICollection<ArticleTag> ArticleTags { get; set; }
         
         public ICollection<Comment> Comments { get; set; }
         
-        public ICollection<User> Likers { get; set; }
+        public ICollection<ArticleLiker> ArticleLikers { get; set; }
     }
 
 }

@@ -12,8 +12,8 @@ using NghiaVoBlog.Data;
 namespace NghiaVoBlog.Migrations
 {
     [DbContext(typeof(AppDBContext))]
-    [Migration("20220923090840_InitDb")]
-    partial class InitDb
+    [Migration("20220930072231_Migra")]
+    partial class Migra
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,21 +23,6 @@ namespace NghiaVoBlog.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
-
-            modelBuilder.Entity("ArticleTag", b =>
-                {
-                    b.Property<Guid>("ArticlesID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("TagsID")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("ArticlesID", "TagsID");
-
-                    b.HasIndex("TagsID");
-
-                    b.ToTable("ArticleTag", (string)null);
-                });
 
             modelBuilder.Entity("NghiaVoBlog.Models.Article", b =>
                 {
@@ -76,6 +61,36 @@ namespace NghiaVoBlog.Migrations
                     b.HasIndex("CategoryID");
 
                     b.ToTable("tblArticle", (string)null);
+                });
+
+            modelBuilder.Entity("NghiaVoBlog.Models.ArticleLiker", b =>
+                {
+                    b.Property<Guid>("ArticleID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("UserID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("ArticleID", "UserID");
+
+                    b.HasIndex("UserID");
+
+                    b.ToTable("ArticleLiker", (string)null);
+                });
+
+            modelBuilder.Entity("NghiaVoBlog.Models.ArticleTag", b =>
+                {
+                    b.Property<Guid>("ArticleID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("TagID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("ArticleID", "TagID");
+
+                    b.HasIndex("TagID");
+
+                    b.ToTable("tblArticleTag", (string)null);
                 });
 
             modelBuilder.Entity("NghiaVoBlog.Models.Category", b =>
@@ -165,14 +180,11 @@ namespace NghiaVoBlog.Migrations
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("ArticleID")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime>("CreateAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("DateOfBirth")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("DateOfBirth")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("DisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -188,24 +200,7 @@ namespace NghiaVoBlog.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("ArticleID");
-
                     b.ToTable("tblUser", (string)null);
-                });
-
-            modelBuilder.Entity("ArticleTag", b =>
-                {
-                    b.HasOne("NghiaVoBlog.Models.Article", null)
-                        .WithMany()
-                        .HasForeignKey("ArticlesID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("NghiaVoBlog.Models.Tag", null)
-                        .WithMany()
-                        .HasForeignKey("TagsID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("NghiaVoBlog.Models.Article", b =>
@@ -225,6 +220,44 @@ namespace NghiaVoBlog.Migrations
                     b.Navigation("Author");
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("NghiaVoBlog.Models.ArticleLiker", b =>
+                {
+                    b.HasOne("NghiaVoBlog.Models.Article", "Article")
+                        .WithMany("ArticleLikers")
+                        .HasForeignKey("ArticleID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("NghiaVoBlog.Models.User", "User")
+                        .WithMany("ArticleLikers")
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Article");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("NghiaVoBlog.Models.ArticleTag", b =>
+                {
+                    b.HasOne("NghiaVoBlog.Models.Article", "Article")
+                        .WithMany("ArticleTags")
+                        .HasForeignKey("ArticleID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("NghiaVoBlog.Models.Tag", "Tag")
+                        .WithMany("ArticleTags")
+                        .HasForeignKey("TagID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Article");
+
+                    b.Navigation("Tag");
                 });
 
             modelBuilder.Entity("NghiaVoBlog.Models.Category", b =>
@@ -257,18 +290,13 @@ namespace NghiaVoBlog.Migrations
                     b.Navigation("Author");
                 });
 
-            modelBuilder.Entity("NghiaVoBlog.Models.User", b =>
-                {
-                    b.HasOne("NghiaVoBlog.Models.Article", null)
-                        .WithMany("Likers")
-                        .HasForeignKey("ArticleID");
-                });
-
             modelBuilder.Entity("NghiaVoBlog.Models.Article", b =>
                 {
-                    b.Navigation("Comments");
+                    b.Navigation("ArticleLikers");
 
-                    b.Navigation("Likers");
+                    b.Navigation("ArticleTags");
+
+                    b.Navigation("Comments");
                 });
 
             modelBuilder.Entity("NghiaVoBlog.Models.Category", b =>
@@ -276,8 +304,15 @@ namespace NghiaVoBlog.Migrations
                     b.Navigation("Articles");
                 });
 
+            modelBuilder.Entity("NghiaVoBlog.Models.Tag", b =>
+                {
+                    b.Navigation("ArticleTags");
+                });
+
             modelBuilder.Entity("NghiaVoBlog.Models.User", b =>
                 {
+                    b.Navigation("ArticleLikers");
+
                     b.Navigation("Articles");
 
                     b.Navigation("Categories");

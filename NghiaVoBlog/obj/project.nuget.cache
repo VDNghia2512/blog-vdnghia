@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hXWXndFF94kqu7GlEjyGBSOMeMPMbRIXRQu/tbM7FtVEjImLD2gsj0PU2ghKFDSnZivuPnok1e+6zXCaRXVSFg==",
+  "dgSpecHash": "RU7r15zKYyQufn5eXiBUjW6914DhWtFdSOpRwlovV5dpPwBJZCfbrzb7MnBcnPtNueORkcMdgMwPa53a9oEkZQ==",
   "success": true,
-  "projectFilePath": "D:\\blog-vdnghia\\NghiaVoBlog\\NghiaVoBlog.csproj",
+  "projectFilePath": "C:\\Users\\LHUser\\Desktop\\Blog\\blog-vdnghia\\NghiaVoBlog\\NghiaVoBlog.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LHUser\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\LHUser\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
