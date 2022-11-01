@@ -11,18 +11,18 @@ function addUser() {
         phone: phone,
         address:address
     };
-    
+    console.log(sendInfo);
     $.ajax({
         url: "http://localhost:5114/api/user",
         type: "POST",
         headers: {
             'Content-Type': 'application/json'
           },
-        dataType: "jsonp",
-        data: sendInfo,
+        dataType: "json",
+        data: JSON.stringify(sendInfo),
         success: function (msg) {
             if (msg) {
-                alert("Success");
+                alert("success");
                 location.reload(true);
             } else {
                 alert("Cannot add to list !");

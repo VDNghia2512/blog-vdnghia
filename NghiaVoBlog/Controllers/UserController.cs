@@ -68,7 +68,7 @@ namespace NghiaVoBlog.Controllers
         }
 
         [HttpDelete]
-        public async Task<IActionResult> DeleteUser(Guid id)
+        public async Task<IActionResult> DeleteUser([FromQuery] Guid id)
         {
             return Ok(await _userRepository.DeleteUser(id));
         }
