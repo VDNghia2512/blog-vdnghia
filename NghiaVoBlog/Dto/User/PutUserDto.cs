@@ -2,10 +2,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace NghiaVoBlog.Dto.User
 {
-    public class UserDto
+    public class PutUserDto
     {
-        public Guid ID{ get; set;}
         public String DisplayName { get; set; }
+        [EmailAddress]
         public String Email { get; set; }
         public String Phone { get; set; }
         public DateTime DateOfBirth { get; set; }
