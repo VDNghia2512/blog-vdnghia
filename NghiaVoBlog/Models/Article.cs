@@ -7,7 +7,7 @@ namespace NghiaVoBlog.Models
 {
     public class Article : BaseEntity
     {
-         public String Title { get; set; }
+        public String Title { get; set; }
         public String Content { get; set; }
         public String ViewCount { get; set; }
         public String DateOfBirth { get; set; }

@@ -46,11 +46,6 @@ namespace NghiaVoBlog.Repository
 
                 throw;
             }
-
-
-
-
-
         }
 
         public async Task<bool> DeleteUser(Guid Id)
