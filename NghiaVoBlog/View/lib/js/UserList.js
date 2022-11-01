@@ -23,7 +23,7 @@ function reloadUserlist(result) {
             else { { var tr = '<tr class=\"trl\">'; } };
             //Thêm thông tin cột cho dòng
             console.log(result[i]);
-            var td = '<td>' + result[i].ID + '</td>'
+            var td = '<td>' + result[i].id + '</td>'
                 + '<td>' + result[i].displayName + '</td>'
                 + '<td>' + result[i].email + '</td> '
                 + '<td>' + result[i].phone + '</td> '
