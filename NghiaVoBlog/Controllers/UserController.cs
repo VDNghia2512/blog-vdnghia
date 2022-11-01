@@ -46,7 +46,7 @@ namespace NghiaVoBlog.Controllers
         }
 
         [HttpPut]
-        public IActionResult PutUser(Guid Id, PutUserDto PutUserDto)
+        public async Task<IActionResult> PutUser(Guid Id, PutUserDto PutUserDto)
         {
             if (ModelState.IsValid)
             {
@@ -58,7 +58,7 @@ namespace NghiaVoBlog.Controllers
                     Address = PutUserDto.Address,
                     DateOfBirth = PutUserDto.DateOfBirth
                 };
-                return Ok(_userRepository.EditUser(Id, userNew));
+                return Ok(await _userRepository.EditUser(Id, userNew));
 
             }
             else
@@ -68,9 +68,9 @@ namespace NghiaVoBlog.Controllers
         }
 
         [HttpDelete]
-        public IActionResult DeleteUser(Guid id)
+        public async Task<IActionResult> DeleteUser(Guid id)
         {
-            return Ok(_userRepository.DeleteUser(id));
+            return Ok(await _userRepository.DeleteUser(id));
         }
 
 
