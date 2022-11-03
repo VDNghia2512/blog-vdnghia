@@ -11,6 +11,8 @@ builder.Services.AddDbContext <AppDBContext>(option =>
 });
 
 builder.Services.AddScoped<UserRepository>();
+builder.Services.AddScoped<ArticleRepository>();
+builder.Services.AddScoped<CommentRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

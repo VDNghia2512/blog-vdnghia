@@ -46,7 +46,7 @@ namespace NghiaVoBlog.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> PutUser(Guid Id, PutUserDto PutUserDto)
+        public async Task<IActionResult> PutUser([FromQuery] Guid Id,PutUserDto PutUserDto)
         {
             if (ModelState.IsValid)
             {

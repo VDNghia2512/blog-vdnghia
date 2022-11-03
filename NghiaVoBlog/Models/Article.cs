@@ -10,7 +10,6 @@ namespace NghiaVoBlog.Models
         public String Title { get; set; }
         public String Content { get; set; }
         public String ViewCount { get; set; }
-        public String DateOfBirth { get; set; }
         [ForeignKey("Author")]
         public Guid AuthorID { get; set; }
         public User Author { get; set; }
