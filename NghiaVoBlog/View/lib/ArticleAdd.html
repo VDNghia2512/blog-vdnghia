@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Article</title>
+    <link rel="shortcut icon" type="image/png" href="img/logo.ico" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src="js/ArticleAdd.js"></script>
+</head>
+
+<body>
+    <header>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="https://www.facebook.com/nghiavo2512">Facebook</a></li>
+            <li><a href="UserList.html">User</a></li>
+            <li><a href="ArticleList.html">Article</a></li>
+            <li><a href="CommentList.html">Comment </a></li>
+        </ul>
+    </nav>
+    <Section>
+        <article class="left">
+            <div class="row">
+                <div class="title" id="Title"></div>
+                <div style=" padding:5%;">
+                    <form>
+                        <div class="form-group">
+                            <label for="InputDisplayName">Title</label>
+                            <input type="text" class="form-control" id="InputTitle"
+                                aria-describedby="DisplayNameHelp" placeholder="Enter Title">
+                            <small id="DisplayNameHelp" class="form-text text-muted">Article's Title.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="InputContent1">Content</label>
+                            <input type="text" class="form-control" id="InputContent" aria-describedby="ContentHelp"
+                                placeholder="Enter Content">
+                            <small id="ContentHelp" class="form-text text-muted">Article's Content</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="InputViewCount">ViewCount</label>
+                            <input type="text" class="form-control" id="InputViewCount" aria-describedby="ViewCountHelp"
+                                placeholder="Enter ViewCount">
+                            <small id="ViewCountHelp" class="form-text text-muted"> ViewCount Here.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="InputAuthorID">AuthorID</label>
+                            <input type="text" class="form-control" id="InputAuthorID" aria-describedby="AuthorIDHelp"
+                                placeholder="Enter AuthorID">
+                            <small id="AuthorIDHelp" class="form-text text-muted">Article's AuthorID Here.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="InputCategoryID">CategoryID</label>
+                            <input type="text" class="form-control" id="InputCategoryID" aria-describedby="CategoryIDHelp"
+                                placeholder="Enter CategoryID">
+                            <small id="CategoryIDHelp" class="form-text text-muted">Article's CategoryID Here.</small>
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="addArticle();">Submit</button>
+                    </form>
+                </div>
+
+            </div><!-- /.row -->
+
+        </article>
+    </Section>
+    <div>
+        <footer>
+            <p class="foot">Nghia Vo &copy; 2022</p>
+        </footer>
+    </div>
+</body>
+
+</html>
