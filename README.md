@@ -15,7 +15,7 @@ https://github.com/VDNghia2512/blog-vdnghia
 [install_dotnet-ef]
 dotnet tool install --global dotnet-ef
 
-<!-- dotnet restore -->
+<!-- dotnet tool restore -->_
 
 [Add_folder_Migrations]
 <!-- Nếu chưa có folder Migrations-->
@@ -41,10 +41,13 @@ git push
 [HTTP]
 http://localhost:5114/api/user
 
+[Trang_danh_sách_User]
+/blog-vdnghia/NghiaVoBlog/View/lib/UserList.html
 
-[Body postman]
-{
-"DisplayName":"Vo Dai Nghia",
-"Email" : "vdnghia2512@gmail.com",
-"Phone" :"0359715163"
-}
+[Trang_danh_sách_Bài_Viết]
+/blog-vdnghia/NghiaVoBlog/View/lib/ArticleList.html
+
+[Trang_danh_sách_Comment]
+/blog-vdnghia/NghiaVoBlog/View/lib/CommentList.html
+
+[USE_SQL_run_file_InsertData.sql_to_insert_Example_Data]
