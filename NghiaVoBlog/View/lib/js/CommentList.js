@@ -12,7 +12,7 @@ $(document).ready(function () {
             console.log(result);
             $('tbody').empty();
             reloadCommentList(result);
-            $('#CommentList').DataTable()
+            $('#CommentList').DataTable();
         }
     });
 });
@@ -57,9 +57,9 @@ function DeleteComment(id) {
         }
     });
 }
-function CloseEditcommentConfirm(){ $("#show").css("display", "none");}
+function CloseEditCommentConfirm(){ $("#show").css("display", "none");}
 var editID;
-function EditcommentConfirm() {
+function EditCommentConfirm() {
 
     console.log("Edit!!!");
     $.ajax({
@@ -69,7 +69,7 @@ function EditcommentConfirm() {
         data: JSON.stringify({
             content: $("#Content").val(),
             authorID: $("#AuthorID").val(),
-            categoryID: $("#ArticleID").val(),
+            articleID: $("#ArticleID").val(),
         }),
         dataType: "json",
         success: function (result) {
@@ -90,5 +90,5 @@ function EditComment(p) {
     $("#ID").val(dataget[p].id);
     $("#Content").val(dataget[p].content);
     $("#AuthorID").val(dataget[p].authorID);
-    $("#ArticleID").val(dataget[p].categoryID);
+    $("#ArticleID").val(dataget[p].articleID);
 }
