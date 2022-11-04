@@ -51,3 +51,4 @@ http://localhost:5114/api/user
 /blog-vdnghia/NghiaVoBlog/View/lib/CommentList.html
 
 [USE_SQL_run_file_InsertData.sql_to_insert_Example_Data]
+[Chạy_file_InsertData.sql_để_thêm_dữ_liệu_mẫu]
